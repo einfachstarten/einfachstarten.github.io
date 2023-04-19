@@ -6,58 +6,154 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-        body {
-            background-color: #ffcd00;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+body {
+    background-color: #ffcd00;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        .smartphone {
-            width: 320px;
-            height: 640px;
-            background-color: white;
-            border: 15px solid black;
-            border-radius: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+.smartphone {
+    width: 320px;
+    height: 640px;
+    background-color: white;
+    border: 15px solid black;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-        .logo {
-            height: 100px;
-            background-color: lightgray; /* Hintergrundfarbe nur für Platzhalter, entfernen oder ändern, wenn Logo eingefügt wird */
-            margin-bottom: 20px;
-        }
+.logo {
+    height: 100px;
+    background-color: lightgray; /* Hintergrundfarbe nur für Platzhalter, entfernen oder ändern, wenn Logo eingefügt wird */
+    margin-bottom: 20px;
+}
 
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            color: black;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: black;
-            margin-bottom: 12px;
-        }
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffcd00;
+    font-size: 16px;
+    margin-bottom: 14px;
+    text-align:center;
+}
 
-        .example {
-            color: black;
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            background-color: #ffcd00;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-        }
+.example {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button.cancel {
+    background-color: darkred;
+    color: white;
+}
+
+.button.continue {
+    background-color: silver;
+    color: black;
+}
+
+.animation-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.car__body {
+  animation: shake 0.2s ease-in-out infinite alternate;
+}
+
+.car__line {
+  transform-origin: center right;
+  stroke-dasharray: 22;
+  animation: line 0.8s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
+.car__line--top {
+  animation-delay: 0s;
+}
+
+.car__line--middle {
+  animation-delay: 0.2s;
+}
+
+.car__line--bottom {
+  animation-delay: 0.4s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(3%);
+  }
+}
+
+@keyframes line {
+  0% {
+    stroke-dashoffset: 22;
+  }
+
+  25% {
+    stroke-dashoffset: 22;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  51% {
+    stroke-dashoffset: 0;
+  }
+
+  80% {
+    stroke-dashoffset: -22;
+  }
+
+  100% {
+    stroke-dashoffset: -22;
+  }
+}
+
     </style>
     <script>
         const examples = [
@@ -71,7 +167,46 @@
             "Fahrersitz wird zum Massagestuhl aufgerüstet...",
             "Scheinwerfer werden mit Abenteuerprojektionen versehen...",
             "Lenkrad wird zur Hula-Hoop-Reifensteuerung konvertiert...",
-            // Weitere 40 Beispiele hier einfügen
+            "Lenkradverkleidung wird mit Diamanten besetzt...",
+            "Türgriffe werden zu Lichtschwertern umfunktioniert...",
+            "Autoantenne wird zum WiFi-Signalverstärker erweitert...",
+            "Hupe wird zum Orchester in voller Lautstärke modifiziert...",
+            "Getränkehalter werden zu Mini-Kühlschränken aufgerüstet...",
+            "Heckspoiler wird zum Hubschrauber-Rotor umgebaut...",
+            "Radkappen werden zu frisbees umgestaltet...",
+            "Kofferraum wird mit einer Sauna ausgestattet...",
+            "Handschuhfach wird zum Mikrowellenofen modifiziert...",
+            "Armaturenbrett wird zum DJ-Mischpult umgebaut...",
+            "Seitenfenster werden mit Hologrammen aufgerüstet...",
+            "Bremsscheiben werden zu Plattenspielern umfunktioniert...",
+            "Sitzbezüge werden zu beheizbaren Decken umgewandelt...",
+            "Dach wird zum Himmel voller Sterne projiziert...",
+            "Luftfilter wird zum Duftspender aufgewertet...",
+            "Auspuff wird zur Nebelmaschine umgebaut...",
+            "Kühlergrill wird zum Grill fürs Barbecue modifiziert...",
+            "Reifen werden zu Amphibienfahrzeug-Schwimmern umfunktioniert...",
+            "Tachometer wird zum Lebensmittelkalorienzähler modifiziert...",
+            "Beifahrersitz wird zum Beifahrer-Simulator umgebaut...",
+            "Schalthebel wird zum Joystick für Spielekonsolen umfunktioniert...",
+            "Scheibenwischer werden zu Laserschwertern modifiziert...",
+            "Kühlsystem wird zum Eismaschinen-System umgebaut...",
+            "Autoradio wird zur Karaoke-Maschine erweitert...",
+            "Tankdeckel wird zum Tresor für Wertsachen umfunktioniert...",
+            "Fahrzeuglackierung wird zum Chamäleon-System modifiziert...",
+            "Fensterheber werden zu Aufzügen umfunktioniert...",
+            "Stoßstange wird zur Trampolineinheit umgebaut...",
+            "Aschenbecher wird zum Miniaturkamin modifiziert...",
+            "Innenraumbeleuchtung wird zum Sternenhimmelprojektor erweitert...",
+            "Zentralverriegelung wird zum Escape-Room-System umgebaut...",
+            "Windschutzscheibe wird zum IMAX-Kino modifiziert...",
+            "Fahrzeugschlüssel wird zur Universalfernbedienung umfunktioniert...",
+            "Sonnenblenden werden zu VR-Brillen aufgerüstet...",
+            "Heckklappe wird zum Mini-Basketballplatz umgebaut...",
+            "Kupplungspedal wird zum Pianopedal modifiziert...",
+            "Scheibenbremsen werden zu DJ-Scratch-Systemen umfunktioniert...",
+            "Lautsprecher werden zu Surround-Sound-Theater aufgerüstet...",
+            "Fahrzeugbatterie wird zum Energiegenerator umgebaut...",
+            "Heizung wird zum Kaminfeuer-System modifiziert",
         ];
 
         function showRandomExample() {
@@ -81,7 +216,7 @@
             exampleElement.style.display = 'block';
             setTimeout(() => {
                 exampleElement.style.display = 'none';
-                setTimeout(showRandomExample, Math.random() * 1000 + 500);
+                setTimeout(showRandomExample, Math.random() * 0 + 0);
             }, Math.random() * 1000 + 6000);
         }
 
@@ -89,15 +224,30 @@
             showRandomExample();
         });
     </script>
-        <title>Während Sie warten</title>
-    </head>
-    <body>
-        <h1>Smart Connect Diagnostik.</h1>
-        <div class="smartphone">
-            <img class="logo" src="adacsm.png" alt="Logo"> <!-- Ersetzen Sie 'logo.png' durch den Dateinamen Ihres Logos -->
-            <h2>Während Sie warten, optimiere ich Ihr Fahrzeug...</h2>
-            <div id="example" class="example"></div>
+    <title>Während Sie warten</title>
+</head>
+<body>    
+    <div class="smartphone">
+        <img class="logo" src="adacsm.png" alt="Logo"> <!-- Ersetzen Sie 'logo.png' durch den Dateinamen Ihres Logos -->
+        <h1>Während Sie warten, werden einige Verbesserungen gestartet ;-)</h1>
+        <div class="loader">
+            <svg class="car" width="102" height="40" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(2 1)" stroke="#002742" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                    <path class="car__body" d="M47.293 2.375C52.927.792 54.017.805 54.017.805c2.613-.445 6.838-.337 9.42.237l8.381 1.863c2.59.576 6.164 2.606 7.98 4.531l6.348 6.732 6.245 1.877c3.098.508 5.609 3.431 5.609 6.507v4.206c0 .29-2.536 4.189-5.687 4.189H36.808c-2.655 0-4.34-2.1-3.688-4.67 0 0 3.71-19.944 14.173-23.902zM36.5 15.5h54.01" stroke-width="3"/>
+                    <ellipse class="car__wheel--left" stroke-width="3.2" fill="#FFF" cx="83.493" cy="30.25" rx="6.922" ry="6.808"/>
+                    <ellipse class="car__wheel--right" stroke-width="3.2" fill="#FFF" cx="46.511" cy="30.25" rx="6.922" ry="6.808"/>
+                    <path class="car__line car__line--top" d="M22.5 16.5H2.475" stroke-width="3"/>
+                    <path class="car__line car__line--middle" d="M20.5 23.5H.4755" stroke-width="3"/>
+                    <path class="car__line car__line--bottom" d="M25.5 9.5h-19" stroke-width="3"/>
+                </g>
+            </svg>
         </div>
-    </body>
-    </html>
-    
+        <div id="example" class="example"></div>
+        <div class="buttons">
+            <a href="random.html" class="button cancel">Abbrechen</a>
+            <a href="random.html" class="button continue">Weiter</a>
+        </div>
+    </div>
+</body>
+
+</html>
