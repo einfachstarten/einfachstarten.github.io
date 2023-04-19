@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #ffcd00;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .smartphone {
+            width: 300px;
+            height: 600px;
+            background-color: black;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .example {
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+    <script>
+        const examples = [
+            "Rückspiegel werden zu Panoramafenstern erweitert...",
+            "Klimaanlage wird zum Schneemaschinensystem modifiziert...",
+            "Sicherheitsgurte werden zu Fallschirmen umgebaut...",
+            "Seitenfenster werden mit Kinoleinwänden ausgestattet...",
+            "Zündschlüssel wird zum Zauberstab umfunktioniert...",
+            "Fußmatten werden zu fliegenden Teppichen verwandelt...",
+            "Blinker werden mit Disco-Lichteffekten synchronisiert...",
+            "Fahrersitz wird zum Massagestuhl aufgerüstet...",
+            "Scheinwerfer werden mit Abenteuerprojektionen versehen...",
+            "Lenkrad wird zur Hula-Hoop-Reifensteuerung konvertiert...",
+            // Weitere 40 Beispiele hier einfügen
+        ];
+
+        function showRandomExample() {
+            const randomIndex = Math.floor(Math.random() * examples.length);
+            const exampleElement = document.getElementById('example');
+            exampleElement.innerText = examples[randomIndex];
+            exampleElement.style.display = 'block';
+            setTimeout(() => {
+                exampleElement.style.display = 'none';
+                setTimeout(showRandomExample, Math.random() * 1000 + 500);
+            }, Math.random() * 1000 + 6000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showRandomExample();
+        });
+    </script>
+    <title>Während Sie warten</title>
+</head>
+<body>
+    <h1>Während Sie warten, optimiere ich Ihr Fahrzeug...</h1>
+    <div class="smartphone">
+        <div id="example" class="example"></div>
+    </div>
+</body>
+</html>
