@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
         body {
             background-color: #ffcd00;
             font-family: Arial, sans-serif;
@@ -16,20 +18,34 @@
         }
 
         .smartphone {
-            width: 300px;
-            height: 600px;
-            background-color: black;
-            border-radius: 20px;
+            width: 320px;
+            height: 640px;
+            background-color: white;
+            border: 15px solid black;
+            border-radius: 25px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            height: 100px;
+            background-color: lightgray; /* Hintergrundfarbe nur für Platzhalter, entfernen oder ändern, wenn Logo eingefügt wird */
+            margin-bottom: 20px;
         }
 
         h1 {
+            font-family: 'Orbitron', sans-serif;
             color: black;
             margin-bottom: 20px;
+        }
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: black;
+            margin-bottom: 12px;
         }
 
         .example {
@@ -37,7 +53,7 @@
             font-size: 24px;
             font-weight: bold;
             text-align: center;
-            background-color: white;
+            background-color: #ffcd00;
             padding: 10px;
             border-radius: 5px;
             display: none;
@@ -73,12 +89,15 @@
             showRandomExample();
         });
     </script>
-    <title>Während Sie warten</title>
-</head>
-<body>
-    <h1>Während Sie warten, optimiere ich Ihr Fahrzeug...</h1>
-    <div class="smartphone">
-        <div id="example" class="example"></div>
-    </div>
-</body>
-</html>
+        <title>Während Sie warten</title>
+    </head>
+    <body>
+        <h1>Smart Connect Diagnostik.</h1>
+        <div class="smartphone">
+            <img class="logo" src="adacsm.png" alt="Logo"> <!-- Ersetzen Sie 'logo.png' durch den Dateinamen Ihres Logos -->
+            <h2>Während Sie warten, optimiere ich Ihr Fahrzeug...</h2>
+            <div id="example" class="example"></div>
+        </div>
+    </body>
+    </html>
+    
